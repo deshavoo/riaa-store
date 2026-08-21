@@ -2,7 +2,6 @@ const Marquee = () => {
   return (
     <div className="w-full bg-black text-[#d7cea0] py-6 overflow-hidden border-t border-gray-800">
       <div className="flex animate-marquee whitespace-nowrap">
-        {/* بنكرر المحتوى عشان ميبانش فيه فراغ في الحركة */}
         {[...Array(4)].map((_, i) => (
           <div
             key={i}

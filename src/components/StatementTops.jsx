@@ -44,7 +44,6 @@ const StatementTops = () => {
 
   return (
     <section className="w-full bg-[#581011] text-white py-16 px-4 md:px-12">
-      {/* البانر العلوي */}
       <div className="grid grid-cols-1 md:grid-cols-2 mb-20 bg-white">
         <div className="w-full h-112.5 md:h-137.5 overflow-hidden">
           <img
@@ -74,12 +73,9 @@ const StatementTops = () => {
         </div>
       </div>
 
-      {/* شبكة المنتجات */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {products.map((product) => (
-          // 1. الـ div ده هو الـ group الرئيسي للكارد
           <div key={product.id} className="flex flex-col items-center group">
-            {/* حاوية الصورة */}
             <div className="w-full aspect-3/4 overflow-hidden bg-gray-200 relative mb-4">
               <img
                 src={product.image}
@@ -87,13 +83,11 @@ const StatementTops = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
 
-              {/* 2. زر Choose Options (يظهر فقط عند الـ hover على الـ group) */}
               <div className="absolute bottom-3 left-3 right-3 bg-[#581011] backdrop-blur-md text-white text-center py-2 text-xs font-agency tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer shadow-lg z-10 rounded-lg">
                 CHOOSE OPTIONS
               </div>
             </div>
 
-            {/* تفاصيل المنتج (اسم وسعر) */}
             <h3 className="text-lg font-agency font-bold tracking-widest uppercase text-white text-center">
               {product.title}
             </h3>
@@ -101,9 +95,7 @@ const StatementTops = () => {
               {product.price}
             </p>
 
-            {/* 3. حاوية السايزات والألوان (مخفية تماماً في الحالة العادية) */}
             <div className="flex flex-col items-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-in-out h-0 group-hover:h-15 overflow-hidden">
-              {/* عرض الـ 5 سايزات */}
               <div className="flex items-center space-x-2 text-xs font-sans text-gray-300 tracking-wider mt-1.5">
                 {product.sizes.map((size, index) => (
                   <span
@@ -118,7 +110,6 @@ const StatementTops = () => {
                 ))}
               </div>
 
-              {/* دوائر الألوان */}
               <div className="flex items-center space-x-2 mt-2.5">
                 {product.colors.map((colorClass, index) => (
                   <span

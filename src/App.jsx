@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import ProductsSection from "./components/ProductsSection";
-import StatementTops from "./components/StatementTops"; // استيراد القسم الجديد
+import StatementTops from "./components/StatementTops";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Hero />
       <Marquee />
       <ProductsSection />
-      <StatementTops /> {/* عرض السكشن هنا */}
+      <StatementTops />
     </div>
   );
 }

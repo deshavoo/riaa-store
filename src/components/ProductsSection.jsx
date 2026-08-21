@@ -5,7 +5,6 @@ import product3 from "../assets/product3.jpg";
 import product4 from "../assets/product4.jpg";
 
 const ProductsSection = () => {
-  // حالة العداد التنازلي
   const [timeLeft, setTimeLeft] = useState({
     days: 13,
     hours: 4,
@@ -13,7 +12,6 @@ const ProductsSection = () => {
     seconds: 11,
   });
 
-  // منطق العداد يشتغل كل ثانية
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -54,7 +52,6 @@ const ProductsSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-20">
         {products.map((product) => (
           <div key={product.id} className="flex flex-col items-center">
-            {/* تم تغيير aspect-3/4 إلى aspect-[3/4] ليعمل مع Tailwind */}
             <div className="w-full aspect-3/4 overflow-hidden bg-gray-200">
               <img
                 src={product.image}
