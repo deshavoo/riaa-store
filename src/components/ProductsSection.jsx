@@ -102,7 +102,7 @@ const ProductsSection = () => {
           Get 30% off on our seasonal sale!
         </div>
 
-        <button className="bg-[#593228] text-[#f0ead6] px-8 py-3 text-sm font-agency font-bold tracking-widest uppercase hover:bg-[#3d211a] transition duration-300">
+        <button className="bg-[#593228] text-[#f0ead6] px-8 py-3 text-sm font-agency font-bold tracking-widest uppercase hover:bg-[#3d211a] transition duration-300 rounded-lg">
           Shop Now
         </button>
       </div>

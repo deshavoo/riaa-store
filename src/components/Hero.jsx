@@ -27,10 +27,10 @@ const Hero = () => {
 
         {/* الأزرار المفرغة (Outline Buttons) */}
         <div className="mt-6 flex items-center space-x-4">
-          <button className="border border-white bg-transparent px-8 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">
+          <button className="border border-white bg-transparent px-8 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300 rounded-lg">
             SHOP NOW
           </button>
-          <button className="border border-white bg-transparent px-8 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300 rounded-2xl">
+          <button className="border border-white bg-transparent px-8 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300 rounded-lg">
             LOOKBOOK
           </button>
         </div>
