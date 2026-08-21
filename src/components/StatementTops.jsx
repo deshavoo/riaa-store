@@ -88,7 +88,7 @@ const StatementTops = () => {
               />
 
               {/* 2. زر Choose Options (يظهر فقط عند الـ hover على الـ group) */}
-              <div className="absolute bottom-3 left-3 right-3 bg-[#581011] backdrop-blur-md text-white text-center py-2 text-xs font-agency tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer shadow-lg z-10">
+              <div className="absolute bottom-3 left-3 right-3 bg-[#581011] backdrop-blur-md text-white text-center py-2 text-xs font-agency tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer shadow-lg z-10 rounded-lg">
                 CHOOSE OPTIONS
               </div>
             </div>
