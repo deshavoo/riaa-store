@@ -30,7 +30,7 @@ const Hero = () => {
           <button className="border border-white bg-transparent px-8 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">
             SHOP NOW
           </button>
-          <button className="border border-white bg-transparent px-8 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">
+          <button className="border border-white bg-transparent px-8 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300 rounded-2xl">
             LOOKBOOK
           </button>
         </div>
