@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Search, User, ShoppingCart, ChevronDown } from "lucide-react";
-import megaMenuImg from "../assets/Hero.jpg";
+import megaMenuImg from "../assets/clothingnav.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,12 +75,12 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* شاشة الميجا منيو */}
+      {/* شاشة الميجا منيو بعرض الشاشة الكامل (Edge-to-Edge) */}
       {activeMenu === "Clothing" && (
         <div className="w-full bg-[#fcfbf9] text-black shadow-2xl transition-all duration-300 animate-fadeIn border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-            {/* العمود الأول: روابط عامة */}
-            <div className="flex flex-col space-y-4 font-agency tracking-wider">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 items-stretch">
+            {/* العمود الأول: روابط عامة (مع مسافة مريحة من أقصى الشمال) */}
+            <div className="flex flex-col justify-center space-y-4 font-agency tracking-wider py-12 px-12 md:pl-16">
               <div className="flex flex-col space-y-2">
                 {["Shop All", "New Arrivals", "Best Sellers"].map((subItem) => (
                   <span
@@ -113,7 +113,7 @@ const Navbar = () => {
             </div>
 
             {/* العمود الثاني: الأقسام الفرعية */}
-            <div className="flex flex-col space-y-3 font-agency tracking-wider">
+            <div className="flex flex-col justify-center space-y-3 font-agency tracking-wider py-12 px-12">
               {["Dresses", "Skirts", "Tops", "Pants", "Jackets", "Blazers"].map(
                 (cat) => (
                   <span
@@ -126,8 +126,8 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* العمود الثالث: صورة فخمة ترويجية للميجا منيو */}
-            <div className="w-full h-80 overflow-hidden bg-gray-200 relative shadow-inner">
+            {/* العمود الثالث: الصورة تملأ أقصى اليمين تماماً بدون هوامش */}
+            <div className="w-full h-full min-h-87.5 overflow-hidden bg-gray-200 relative">
               <img
                 src={megaMenuImg}
                 alt="Clothing Mega Menu"
