@@ -18,6 +18,7 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false); // الحالة المضافة لعربة التسوق
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,6 +93,7 @@ const Navbar = () => {
             onClick={() => {
               setIsSearchOpen(true);
               setIsAuthOpen(false);
+              setIsCartOpen(false);
             }}
           />
           <User
@@ -100,11 +102,17 @@ const Navbar = () => {
             onClick={() => {
               setIsAuthOpen(!isAuthOpen);
               setIsSearchOpen(false);
+              setIsCartOpen(false);
             }}
           />
           <ShoppingCart
             size={20}
             className="cursor-pointer transition hover:text-gray-400"
+            onClick={() => {
+              setIsCartOpen(true);
+              setIsSearchOpen(false);
+              setIsAuthOpen(false);
+            }}
           />
         </div>
       </nav>
@@ -411,6 +419,53 @@ const Navbar = () => {
               <User size={14} />
               <span>Profile</span>
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* سلة التسوق الجانبية (Cart Slide-over Drawer المضافة حديثاً) */}
+      {isCartOpen && (
+        <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm transition-opacity">
+          <div className="w-full md:w-105 bg-black text-white h-full shadow-2xl p-8 flex flex-col justify-between animate-slideLeft border-l border-zinc-800 font-agency tracking-wider">
+            <div>
+              <div className="flex items-center justify-between pb-6 border-b border-zinc-800">
+                <h3 className="text-lg font-cinzel uppercase tracking-widest">
+                  Your cart
+                </h3>
+                <X
+                  size={22}
+                  className="cursor-pointer text-gray-400 hover:text-white transition"
+                  onClick={() => setIsCartOpen(false)}
+                />
+              </div>
+
+              <div className="py-16 text-center flex flex-col items-center">
+                <h4 className="text-xl font-cinzel tracking-widest uppercase mb-3 text-white">
+                  YOUR CART IS EMPTY
+                </h4>
+                <p className="text-xs text-gray-400 tracking-wider mb-8">
+                  Not sure where to start?
+                  <br />
+                  Try this collections:
+                </p>
+
+                <div className="w-full flex flex-col space-y-3">
+                  {["ALL COLLECTIONS", "DRESSES", "CLOTHINGS"].map((col) => (
+                    <button
+                      key={col}
+                      className="w-full border border-white/40 py-3.5 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition duration-300 font-semibold"
+                      onClick={() => setIsCartOpen(false)}
+                    >
+                      {col}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center text-[10px] text-zinc-600 uppercase tracking-widest pb-2">
+              Secure Checkout Powered by RIAA
+            </div>
           </div>
         </div>
       )}
