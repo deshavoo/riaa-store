@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Search, User, ShoppingCart, ChevronDown } from "lucide-react";
 import megaMenuImg from "../assets/clothingnav.jpg";
+import dressesImg from "../assets/Hero.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +19,14 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMenuHover = (item) => {
+    if (item === "Clothing" || item === "Dresses") {
+      setActiveMenu(item);
+    } else {
+      setActiveMenu(null);
+    }
+  };
 
   return (
     <header
@@ -44,15 +53,10 @@ const Navbar = () => {
               <li
                 key={item}
                 className="relative flex items-center gap-1 cursor-pointer transition duration-300 py-2"
-                onMouseEnter={() => {
-                  if (item === "Clothing") setActiveMenu("Clothing");
-                  else setActiveMenu(null);
-                }}
+                onMouseEnter={() => handleMenuHover(item)}
                 onClick={() => {
-                  if (item === "Clothing") {
-                    setActiveMenu(
-                      activeMenu === "Clothing" ? null : "Clothing"
-                    );
+                  if (item === "Clothing" || item === "Dresses") {
+                    setActiveMenu(activeMenu === item ? null : item);
                   } else {
                     setActiveMenu(null);
                   }
@@ -75,36 +79,36 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* شاشة الميجا منيو بعرض الشاشة الكامل (Edge-to-Edge) */}
+      {/* 1. ميجا منيو CLOTHING */}
       {activeMenu === "Clothing" && (
         <div className="w-full bg-[#fcfbf9] text-black shadow-2xl transition-all duration-300 animate-fadeIn border-t border-gray-200">
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 items-stretch">
-            {/* العمود الأول: روابط عامة (مع مسافة مريحة من أقصى الشمال) */}
-            <div className="flex flex-col justify-center space-y-4 font-agency tracking-wider py-12 px-12 md:pl-16">
+          <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_1fr_2.5fr] items-center">
+            {/* العمود الأول */}
+            <div className="flex flex-col justify-center space-y-4 py-8 pl-12 pr-6 border-r border-gray-200 font-agency tracking-wider">
               <div className="flex flex-col space-y-2">
-                {["Shop All", "New Arrivals", "Best Sellers"].map((subItem) => (
+                {["SHOP ALL", "NEW ARRIVALS", "BEST SELLERS"].map((subItem) => (
                   <span
                     key={subItem}
-                    className="text-lg uppercase cursor-pointer hover:text-gray-600 transition"
+                    className="text-lg uppercase tracking-widest cursor-pointer hover:text-gray-500 transition font-medium"
                   >
                     {subItem}
                   </span>
                 ))}
               </div>
 
-              <div className="pt-6 border-t border-gray-300 flex flex-col space-y-2">
-                <span className="text-xs uppercase tracking-widest text-gray-500 mb-1 font-bold">
-                  Featured
+              <div className="pt-4 border-t border-gray-200 flex flex-col space-y-1.5">
+                <span className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-semibold">
+                  FEATURED
                 </span>
                 {[
-                  "The City Edit",
-                  "Spring Collection",
-                  "Resort Collection",
-                  "Sale",
+                  "THE CITY EDIT",
+                  "SPRING COLLECTION",
+                  "RESORT COLLECTION",
+                  "SALE",
                 ].map((feat) => (
                   <span
                     key={feat}
-                    className="text-sm uppercase cursor-pointer hover:text-gray-600 transition"
+                    className="text-xs uppercase tracking-widest text-gray-600 cursor-pointer hover:text-black transition"
                   >
                     {feat}
                   </span>
@@ -112,26 +116,57 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* العمود الثاني: الأقسام الفرعية */}
-            <div className="flex flex-col justify-center space-y-3 font-agency tracking-wider py-12 px-12">
-              {["Dresses", "Skirts", "Tops", "Pants", "Jackets", "Blazers"].map(
-                (cat) => (
-                  <span
-                    key={cat}
-                    className="text-lg uppercase cursor-pointer hover:text-gray-600 transition"
-                  >
-                    {cat}
-                  </span>
-                )
-              )}
+            {/* العمود الثاني */}
+            <div className="flex flex-col justify-center space-y-3 py-8 px-8 border-r border-gray-200 font-agency tracking-wider">
+              {[
+                "Dresses",
+                "Skirtes",
+                "Tops",
+                "Bants",
+                "Jackets",
+                "Blazers",
+              ].map((cat) => (
+                <span
+                  key={cat}
+                  className="text-lg uppercase tracking-widest cursor-pointer hover:text-gray-500 transition font-medium"
+                >
+                  {cat}
+                </span>
+              ))}
             </div>
 
-            {/* العمود الثالث: الصورة تملأ أقصى اليمين تماماً بدون هوامش */}
-            <div className="w-full h-full min-h-87.5 overflow-hidden bg-gray-200 relative">
+            {/* العمود الثالث: الصورة */}
+            <div className="w-full h-80 overflow-hidden bg-[#fcfbf9] relative flex items-center justify-center">
               <img
                 src={megaMenuImg}
                 alt="Clothing Mega Menu"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 2. ميجا منيو DRESSES */}
+      {activeMenu === "Dresses" && (
+        <div className="w-full bg-[#fcfbf9] text-black shadow-2xl transition-all duration-300 animate-fadeIn border-t border-gray-200">
+          <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_2.5fr] items-center">
+            <div className="flex flex-col justify-center space-y-4 py-8 pl-16 pr-8 border-r border-gray-200 font-agency tracking-wider">
+              {["ALL DRESSES", "MINIS", "MAXIS", "SKIRS"].map((dressItem) => (
+                <span
+                  key={dressItem}
+                  className="text-xl uppercase tracking-widest cursor-pointer hover:text-gray-500 transition font-medium"
+                >
+                  {dressItem}
+                </span>
+              ))}
+            </div>
+
+            <div className="w-full h-80 overflow-hidden relative group">
+              <img
+                src={dressesImg}
+                alt="Resort Collection"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           </div>
