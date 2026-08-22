@@ -3,6 +3,9 @@ import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import ProductsSection from "./components/ProductsSection";
 import StatementTops from "./components/StatementTops";
+import FeaturedEdit from "./components/FeaturedEdit";
+import ProductBanner from "./components/ProductBanner";
+import BlackFridayBanner from "./components/BlackFridayBanner";
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
       <Marquee />
       <ProductsSection />
       <StatementTops />
+      <ProductBanner />
+      <BlackFridayBanner />
+      <FeaturedEdit />
     </div>
   );
 }
