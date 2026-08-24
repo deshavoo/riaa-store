@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Search,
   User,
@@ -14,11 +15,12 @@ import topsImg from "../assets/topsnav.jpg";
 import sectionImg from "../assets/sectionnav.jpg";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false); // الحالة المضافة لعربة التسوق
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +58,10 @@ const Navbar = () => {
             : "bg-transparent text-white"
         }`}
       >
-        <div className="text-4xl tracking-widest cursor-pointer font-cinzel">
+        <div
+          className="text-4xl tracking-widest cursor-pointer font-cinzel"
+          onClick={() => navigate("/")}
+        >
           RIAA
         </div>
 
@@ -68,7 +73,10 @@ const Navbar = () => {
                 className="relative flex items-center gap-1 cursor-pointer transition duration-300 py-2"
                 onMouseEnter={() => handleMenuHover(item)}
                 onClick={() => {
-                  if (
+                  if (item === "Sale") {
+                    navigate("/sale");
+                    setActiveMenu(null);
+                  } else if (
                     ["Clothing", "Dresses", "Tops", "Section"].includes(item)
                   ) {
                     setActiveMenu(activeMenu === item ? null : item);
@@ -423,7 +431,6 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* سلة التسوق الجانبية (Cart Slide-over Drawer المضافة حديثاً) */}
       {isCartOpen && (
         <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm transition-opacity">
           <div className="w-full md:w-105 bg-black text-white h-full shadow-2xl p-8 flex flex-col justify-between animate-slideLeft border-l border-zinc-800 font-agency tracking-wider">
