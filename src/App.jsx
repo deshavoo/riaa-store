@@ -11,6 +11,11 @@ import BlackFridayBanner from "./components/BlackFridayBanner";
 import SalePage from "./pages/SalePage"; // الصفحة الجديدة
 import RecreateTheLook from "./components/RecreateTheLook";
 import TheCityEdit from "./components/TheCityEdit";
+import StandoutPieces from "./components/StandoutPieces";
+import UnforgettableElegance from "./components/UnforgettableElegance";
+import MarqueeBanner from "./components/MarqueeBanner";
+import BrandStory from "./components/BrandStory";
+import LatestStories from "./components/LatestStories";
 
 // صفحة الهوم الرئيسية
 const Home = () => (
@@ -24,6 +29,11 @@ const Home = () => (
     <FeaturedEdit />
     <RecreateTheLook />
     <TheCityEdit />
+    <StandoutPieces />
+    <UnforgettableElegance />
+    <MarqueeBanner />
+    <BrandStory />
+    <LatestStories />
   </div>
 );
 
