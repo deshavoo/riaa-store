@@ -37,7 +37,7 @@ const BlackFridayBanner = () => {
             <p className="text-xs md:text-sm font-sans text-gray-300 tracking-wide mb-6">
               Discount of up to 50% on select style.
             </p>
-            <button className="bg-white text-black px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition duration-300">
+            <button className="bg-white text-black px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition duration-300 rounded-lg">
               SHOP SALE
             </button>
           </div>

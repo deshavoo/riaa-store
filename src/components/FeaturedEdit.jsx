@@ -1,4 +1,3 @@
-// استبدل مسارات الصور دي بالصور الخاصة بمنتجات الـ Featured Edit عندك
 import product1 from "../assets/FE1.jpg";
 import product2 from "../assets/FE2.jpg";
 import product3 from "../assets/FE3.jpg";
@@ -47,7 +46,7 @@ const FeaturedEdit = () => {
         <h2 className="text-4xl md:text-5xl font-agency font-bold tracking-widest uppercase">
           FEATURED EDIT
         </h2>
-        <button className="mt-4 md:mt-0 border border-black px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">
+        <button className="mt-4 md:mt-0 border border-black px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition duration-300 rounded-lg">
           SHOP ALL
         </button>
       </div>

@@ -23,12 +23,11 @@ const LatestStories = () => {
   return (
     <section className="w-full bg-[#FAFAFA] py-24 px-6 md:px-16 lg:px-24 text-neutral-900 border-t border-neutral-200">
       <div className="max-w-7xl mx-auto">
-        {/* رأس السكشن: العنوان وزرار عرض الكل */}
         <div className="mb-14">
           <h2 className="text-3xl md:text-5xl font-light tracking-widest uppercase font-mono mb-4">
             LATEST STORIES
           </h2>
-          <button className="border border-neutral-900 px-6 py-2.5 text-xs uppercase tracking-widest font-semibold hover:bg-neutral-900 hover:text-white transition duration-300">
+          <button className="border border-neutral-900 px-6 py-2.5 text-xs uppercase tracking-widest font-semibold hover:bg-neutral-900 hover:text-white transition duration-300 rounded-lg">
             VIEW ALL POSTS
           </button>
         </div>

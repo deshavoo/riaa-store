@@ -2,14 +2,11 @@ const StandoutPieces = () => {
   return (
     <section className="w-full bg-[#FAFAFA] py-16 px-6 md:px-16 lg:px-24 text-neutral-900 border-t border-neutral-200">
       <div className="max-w-7xl mx-auto">
-        {/* عنوان السكشن */}
         <h2 className="text-3xl md:text-4xl font-light tracking-widest uppercase mb-10 font-mono">
           STANDOUT PICES
         </h2>
 
-        {/* شبكة المنتجات (4 أعمدة) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* منتج 1 */}
           <div className="flex flex-col space-y-3 group cursor-pointer">
             <div className="relative h-105 overflow-hidden bg-neutral-200">
               <img
@@ -29,7 +26,6 @@ const StandoutPieces = () => {
               <span className="text-[10px] text-neutral-500 tracking-wider">
                 4 color, 5 sizes
               </span>
-              {/* دواير الألوان */}
               <div className="flex justify-center items-center gap-1.5 pt-1">
                 <span className="w-3 h-3 rounded-full bg-black border border-neutral-400"></span>
                 <span className="w-3 h-3 rounded-full bg-white border border-neutral-400"></span>
@@ -39,7 +35,6 @@ const StandoutPieces = () => {
             </div>
           </div>
 
-          {/* منتج 2 */}
           <div className="flex flex-col space-y-3 group cursor-pointer">
             <div className="relative h-105 overflow-hidden bg-neutral-200">
               <img
@@ -79,7 +74,6 @@ const StandoutPieces = () => {
             </div>
           </div>
 
-          {/* منتج 4 */}
           <div className="flex flex-col space-y-3 group cursor-pointer">
             <div className="relative h-105 overflow-hidden bg-neutral-200">
               <img

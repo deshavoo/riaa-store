@@ -3,8 +3,7 @@ const MarqueeBanner = () => {
     <div className="relative w-full bg-[#FAFAFA] py-8 overflow-hidden border-t border-b border-neutral-200 select-none">
       {/* حاوية الشريط المتحرك باستخدام CSS Animation */}
       <div className="flex w-max animate-marquee items-center space-x-12 whitespace-nowrap">
-        {/* المحتوى يتكرر مرتين عشان الحركة تكون ناعمة وما يحصلش فراغ */}
-        {[...Array(2)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <div
             key={i}
             className="flex items-center space-x-12 text-neutral-900 font-mono text-sm md:text-base uppercase tracking-widest"

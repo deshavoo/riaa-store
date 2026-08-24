@@ -3,7 +3,6 @@ import top2 from "../assets/top2.jpg";
 import top3 from "../assets/top3.jpg";
 import top4 from "../assets/top4.jpg";
 
-// استورد الصور التانية اللي عايزها تظهر وقت الـ Hover (غير الأسماء حسب صورك)
 import top1Hover from "../assets/top1h.jpg";
 import top2Hover from "../assets/top2h.jpg";
 import top3Hover from "../assets/top3h.jpg";
@@ -19,7 +18,7 @@ const StatementTops = () => {
       price: "$229.00",
       sizes: ["XS", "S", "M", "L", "XL"],
       image: top1,
-      imageHover: top1Hover, // الصورة التانية وقت الهافر
+      imageHover: top1Hover,
       colors: ["bg-gray-300", "bg-stone-600", "bg-black"],
     },
     {
@@ -53,7 +52,6 @@ const StatementTops = () => {
 
   return (
     <section className="w-full bg-[#593228] text-white py-16 px-4 md:px-12">
-      {/* البانر العلوي */}
       <div className="grid grid-cols-1 md:grid-cols-2 mb-20 bg-[#e8e4dc]">
         <div className="w-full h-112.5 md:h-137.5 overflow-hidden">
           <img
@@ -83,33 +81,27 @@ const StatementTops = () => {
         </div>
       </div>
 
-      {/* شبكة المنتجات */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {products.map((product) => (
           <div key={product.id} className="flex flex-col items-center group">
-            {/* حاوية الصورة */}
             <div className="w-full aspect-3/4 overflow-hidden bg-gray-200 relative mb-4 cursor-pointer">
-              {/* الصورة الأساسية */}
               <img
                 src={product.image}
                 alt={product.title}
                 className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
               />
 
-              {/* الصورة التانية (تظهر وقت الهافر) */}
               <img
                 src={product.imageHover}
                 alt={`${product.title} hover`}
                 className="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:scale-105"
               />
 
-              {/* زر Choose Options */}
               <div className="absolute bottom-3 left-3 right-3 bg-black/70 backdrop-blur-md text-white text-center py-2 text-xs font-agency tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg z-10">
                 CHOOSE OPTIONS
               </div>
             </div>
 
-            {/* تفاصيل المنتج */}
             <h3 className="text-lg font-agency font-bold tracking-widest uppercase text-white text-center">
               {product.title}
             </h3>
@@ -117,9 +109,7 @@ const StatementTops = () => {
               {product.price}
             </p>
 
-            {/* حاوية السايزات والألوان اللي بتظهر وقت الهافر */}
             <div className="flex flex-col items-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-in-out h-0 group-hover:h-15 overflow-hidden">
-              {/* عرض الـ 5 سايزات */}
               <div className="flex items-center space-x-2 text-xs font-sans text-gray-300 tracking-wider mt-1.5">
                 {product.sizes.map((size, index) => (
                   <span
@@ -134,7 +124,6 @@ const StatementTops = () => {
                 ))}
               </div>
 
-              {/* دوائر الألوان */}
               <div className="flex items-center space-x-2 mt-2.5">
                 {product.colors.map((colorClass, index) => (
                   <span
